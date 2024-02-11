@@ -5,6 +5,7 @@
 #include <vector>
 #include <regex>
 
+// All the token types for the lexer.
 enum TokenType {
     IDENTIFIER,
     KEYWORD,
@@ -24,7 +25,7 @@ enum TokenType {
 struct Token {
     TokenType type;
     std::string lexeme;
-    size_t position; // Add position information
+    size_t position;
 };
 
 // AST Node types
@@ -123,10 +124,10 @@ private:
         {"\\d+", INT_LITERAL},
         {"\"(?:\\\\.|[^\"])*\"", STRING_LITERAL},
         {"[\\+\\-\\*/]", OPERATOR},
-        {"\\b(if|else|while|for|return)\\b", KEYWORD}, // Add control flow keywords
-        {"\\b(package)\\b", KEYWORD}, // Add package keyword
-        {"\\[\\]", OPERATOR}, // Add regex for empty square brackets
-        {"System\\.out\\.print", IDENTIFIER} // Add token for System.out.print
+        {"\\b(if|else|while|for|return)\\b", KEYWORD},
+        {"\\b(package)\\b", KEYWORD},
+        {"\\[\\]", OPERATOR},
+        {"System\\.out\\.print", IDENTIFIER}
     };
 
     // Skip whitespaces
@@ -146,7 +147,7 @@ public:
         Token token;
         do {
             token = lexer.getNextToken();
-            // You can implement parsing logic here
+            //TODO: Implement parsing logic here
             // For demonstration, just print the tokens
             std::cout << "Token: " << token.lexeme << " Type: " << token.type << std::endl;
         } while (token.type != END_OF_FILE);
@@ -159,7 +160,7 @@ private:
     DeclarationNode* parseDeclaration(const Token& keywordToken) {
         Token identifierToken = lexer.getNextToken();
         if (identifierToken.type != IDENTIFIER) {
-            // Handle error
+        //TODO: Make a way to handle errors
         }
         return new DeclarationNode(keywordToken.type, identifierToken.lexeme);
     }
