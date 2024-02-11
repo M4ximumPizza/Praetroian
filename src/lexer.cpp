@@ -5,7 +5,6 @@
 #include <vector>
 #include <regex>
 
-// Define token types
 enum TokenType {
     IDENTIFIER,
     KEYWORD,
@@ -80,7 +79,6 @@ public:
     std::string identifier;
 };
 
-// Java Lexer
 class Lexer {
 public:
     Lexer(const std::string& sourceCode) : sourceCode(sourceCode), currentPosition(0) {}
@@ -123,7 +121,8 @@ private:
         {"\\d+", INT_LITERAL},
         {"\"(?:\\\\.|[^\"])*\"", STRING_LITERAL},
         {"[\\+\\-\\*/]", OPERATOR},
-        {"\\b(if|else|while|for|return)\\b", KEYWORD} // Add control flow keywords
+        {"\\b(if|else|while|for|return)\\b", KEYWORD}, // Add control flow keywords
+        {"\\b(package)\\b", KEYWORD} // Add package keyword
     };
 
     // Skip whitespaces
@@ -139,24 +138,14 @@ class Parser {
 public:
     Parser(Lexer& lexer) : lexer(lexer) {}
 
-    // Parse program
-    ProgramNode* parse() {
-        auto programNode = new ProgramNode();
+    void parse() {
         Token token;
         do {
             token = lexer.getNextToken();
-            switch (token.type) {
-                case KEYWORD: {
-                    auto declaration = parseDeclaration(token);
-                    programNode->declarations.push_back(declaration);
-                    break;
-                }
-                default:
-                    // Handle other tokens or error
-                    break;
-            }
+            // You can implement parsing logic here
+            // For demonstration, just print the tokens
+            std::cout << "Token: " << token.lexeme << " Type: " << token.type << std::endl;
         } while (token.type != END_OF_FILE);
-        return programNode;
     }
 
 private:
@@ -186,12 +175,7 @@ int main() {
 
     Lexer lexer(sourceCode);
     Parser parser(lexer);
-    ProgramNode* ast = parser.parse();
-
-    // Do something with the AST...
-
-    // Cleanup
-    delete ast;
+    parser.parse();
 
     return 0;
 }
