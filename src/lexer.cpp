@@ -27,6 +27,59 @@ struct Token {
     std::string lexeme;
 };
 
+// AST Node types
+enum class NodeType {
+    Program,
+    Declaration,
+    Statement,
+    Expression
+};
+
+// AST Node base class
+class Node {
+public:
+    Node(NodeType type) : type(type) {}
+    virtual ~Node() {}
+
+    NodeType getType() const { return type; }
+
+private:
+    NodeType type;
+};
+
+// AST Program Node
+class ProgramNode : public Node {
+public:
+    ProgramNode() : Node(NodeType::Program) {}
+    std::vector<Node*> declarations;
+};
+
+// AST Declaration Node
+class DeclarationNode : public Node {
+public:
+    DeclarationNode(TokenType keywordType, const std::string& identifier)
+        : Node(NodeType::Declaration), keywordType(keywordType), identifier(identifier) {}
+
+    TokenType keywordType;
+    std::string identifier;
+};
+
+// AST Statement Node
+class StatementNode : public Node {
+public:
+    StatementNode() : Node(NodeType::Statement) {}
+    // For simplicity, let's assume a statement can only be an expression
+    Node* expression;
+};
+
+// AST Expression Node
+class ExpressionNode : public Node {
+public:
+    ExpressionNode() : Node(NodeType::Expression) {}
+    // For simplicity, let's assume expression is just an identifier
+    std::string identifier;
+};
+
 // Java Lexer
 class Lexer {
 public:
@@ -86,18 +139,37 @@ class Parser {
 public:
     Parser(Lexer& lexer) : lexer(lexer) {}
 
-    void parse() {
+    // Parse program
+    ProgramNode* parse() {
+        auto programNode = new ProgramNode();
         Token token;
         do {
             token = lexer.getNextToken();
-            // You can implement parsing logic here
-            // For demonstration, just print the tokens
-            std::cout << "Token: " << token.lexeme << " Type: " << token.type << std::endl;
+            switch (token.type) {
+                case KEYWORD: {
+                    auto declaration = parseDeclaration(token);
+                    programNode->declarations.push_back(declaration);
+                    break;
+                }
+                default:
+                    // Handle other tokens or error
+                    break;
+            }
         } while (token.type != END_OF_FILE);
+        return programNode;
     }
 
 private:
     Lexer& lexer;
+
+    // Parse declaration
+    DeclarationNode* parseDeclaration(const Token& keywordToken) {
+        Token identifierToken = lexer.getNextToken();
+        if (identifierToken.type != IDENTIFIER) {
+            // Handle error
+        }
+        return new DeclarationNode(keywordToken.type, identifierToken.lexeme);
+    }
 };
 
 int main() {
@@ -114,7 +186,12 @@ int main() {
 
     Lexer lexer(sourceCode);
     Parser parser(lexer);
-    parser.parse();
+    ProgramNode* ast = parser.parse();
+
+    // Do something with the AST...
+
+    // Cleanup
+    delete ast;
 
     return 0;
 }

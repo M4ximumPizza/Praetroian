@@ -8,7 +8,7 @@ code that can be run on a computer without the need for a Java Virtual Machine.
 ## Goals:
 - [X] Create a lexer
 - [X] Create a parser
-- [ ] Abstract Syntax Tree (AST):
+- [X] Abstract Syntax Tree (AST):
 - [ ] Create an intermediate representation
 - [ ] Create a code generator
 - [ ] Create a runtime library
