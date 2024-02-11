@@ -1,4 +1,4 @@
-![Praetorian Logo](pictures/logo.jpg)
+<img src="pictures/logo.jpg" alt="Praetorian Logo" width="200" height="200" />
 
 # Praetorian - Java to Machine Code Compiler
 
