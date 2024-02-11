@@ -1,3 +1,5 @@
+![Praetorian Logo](pictures/logo.jpg)
+
 # Praetorian - Java to Machine Code Compiler
 
 Praetorian is in development to be a Java to machine code compiler. This
