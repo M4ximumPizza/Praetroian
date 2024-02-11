@@ -24,6 +24,7 @@ enum TokenType {
 struct Token {
     TokenType type;
     std::string lexeme;
+    size_t position; // Add position information
 };
 
 // AST Node types
@@ -88,7 +89,7 @@ public:
         skipWhitespace();
 
         if (currentPosition >= sourceCode.length()) {
-            return Token{END_OF_FILE, ""};
+            return Token{END_OF_FILE, "", currentPosition};
         }
 
         for (const auto& regexToken : regexTokens) {
@@ -97,13 +98,14 @@ public:
 
             if (std::regex_search(sourceCode.begin() + currentPosition, sourceCode.end(), match, regex, std::regex_constants::match_continuous)) {
                 currentPosition += match.position() + match.length();
-                return Token{regexToken.second, match.str()};
+                return Token{regexToken.second, match.str(), currentPosition};
             }
         }
 
         // Unknown token
-        std::cerr << "Unknown token at position " << currentPosition << std::endl;
-        return Token{END_OF_FILE, ""};
+        std::string unidentifiedToken = sourceCode.substr(currentPosition, 10); // Extract the unidentified token
+        std::cerr << "Unknown token at position " << currentPosition << ": " << unidentifiedToken << std::endl;
+        return Token{END_OF_FILE, "", currentPosition};
     }
 
 private:
