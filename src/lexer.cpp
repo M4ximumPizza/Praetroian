@@ -124,7 +124,9 @@ private:
         {"\"(?:\\\\.|[^\"])*\"", STRING_LITERAL},
         {"[\\+\\-\\*/]", OPERATOR},
         {"\\b(if|else|while|for|return)\\b", KEYWORD}, // Add control flow keywords
-        {"\\b(package)\\b", KEYWORD} // Add package keyword
+        {"\\b(package)\\b", KEYWORD}, // Add package keyword
+        {"\\[\\]", OPERATOR}, // Add regex for empty square brackets
+        {"System\\.out\\.print", IDENTIFIER} // Add token for System.out.print
     };
 
     // Skip whitespaces
