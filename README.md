@@ -12,17 +12,17 @@ code that can be run on a computer without the need for a Java Virtual Machine.
 - [X] Create a parser
 - [X] Abstract Syntax Tree (AST):
 - [ ] Create an intermediate representation
-- [ ] Create a code generator
-- [ ] Create a runtime library
-- [ ] Create a standard library
 - [ ] Create proper Documentation
-- [ ] Add support for all Java versions
+- [ ] Add support for most Java versions (JDK11-Current)
+- [ ] Make this useable compilable by the command line and a external program
 
 ## Getting Started
 To get started with this project, you will need to clone the repository and
 build the project. This project is written in CPP and can compile in a number
 of ways. You can download [Clang](https://clang.llvm.org) or [GCC](https://gcc.gnu.org/)
 to compile the project.
+
+⚠️ I will refractor this code sometime before March, so instead of one file, its going to be multiple. ⚠️
 
 ## License
 This project is licensed under the GNU General Public License v3.0 - see the
