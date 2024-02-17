@@ -1,4 +1,4 @@
-#include "Lexer.h"
+#include "lexer.h"
 
 Lexer::Lexer(const std::string& sourceCode) : sourceCode(sourceCode), currentPosition(0),
     regexTokens {
