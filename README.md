@@ -22,8 +22,6 @@ build the project. This project is written in CPP and can compile in a number
 of ways. You can download [Clang](https://clang.llvm.org) or [GCC](https://gcc.gnu.org/)
 to compile the project.
 
-⚠️ I will refractor this code sometime before March, so instead of one file, its going to be multiple. ⚠️
-
 ## License
 This project is licensed under the GNU General Public License v3.0 - see the
 [LICENSE](LICENSE.txt) file for details.
