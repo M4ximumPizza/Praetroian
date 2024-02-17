@@ -4,8 +4,11 @@
 
 Praetorian is in development to be a Java to machine code compiler. This
 project is in its early stages and is not yet ready for use. The goal is to
-create a compiler that can take Java source code and compile it to machine
-code that can be run on a computer without the need for a Java Virtual Machine.
+create a compiler that can take Java code and compile it into machine code.
+It will work without the need of the Java Virtual Machine (JVM). 
+
+There will be a command similar to the 'javac' command that compiles into 
+bytecode. Instead of bytecode, its machine code. 
 
 ## Goals:
 - [X] Create a lexer
