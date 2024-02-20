@@ -19,7 +19,7 @@ Similar to the 'javac' command which compiles Java code into bytecode, Praetoria
 To initiate involvement with this project, the repository needs to be cloned followed by building the project. Written in C++, the project supports compilation using various methods. You can utilize [Clang](https://clang.llvm.org) or [GCC](https://gcc.gnu.org/) for compiling.
 
 ## Contributors
-![Logan Abernathy](https://github.com/m4ximumpizza.png) ![Shabman](https://github.com/shabman.png)
+<img src="https://github.com/m4ximumpizza.png" alt="Logan Abernathy" height="100" style="height: 100px;" /> <img src="https://github.com/shabman.png" alt="Shabman" height="100" style="height: 100px;" />
 
 ## License
 This project is licensed under the GNU General Public License v3.0. Refer to the [LICENSE](LICENSE.txt) file for further details.
