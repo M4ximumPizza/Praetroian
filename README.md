@@ -1,30 +1,25 @@
-<img src="pictures/logo.jpg" alt="Praetorian Logo" width="200" height="200" />
+![Praetorian Logo](pictures/logo.jpg)
 
 # Praetorian - Java to Machine Code Compiler
 
-Praetorian is in development to be a Java to machine code compiler. This
-project is in its early stages and is not yet ready for use. The goal is to
-create a compiler that can take Java code and compile it into machine code.
-It will work without the need of the Java Virtual Machine (JVM). 
+Praetorian is a project in development aiming to create a Java to machine code compiler. Currently in its nascent stage, it is not yet suitable for practical use. The primary objective is to devise a compiler capable of translating Java code directly into machine code, thereby eliminating the dependency on the Java Virtual Machine (JVM).
 
-There will be a command similar to the 'javac' command that compiles into 
-bytecode. Instead of bytecode, its machine code. 
+Similar to the 'javac' command which compiles Java code into bytecode, Praetorian will generate machine code instead of bytecode.
 
 ## Goals:
-- [X] Create a lexer
-- [X] Create a parser
-- [X] Abstract Syntax Tree (AST):
-- [ ] Create an intermediate representation
-- [ ] Create proper Documentation
-- [ ] Add support for most Java versions (JDK11-Current)
-- [ ] Make this useable compilable by the command line and a external program
+- [X] Develop a lexer
+- [X] Implement a parser
+- [X] Construct an Abstract Syntax Tree (AST)
+- [ ] Establish an intermediate representation
+- [ ] Produce comprehensive documentation
+- [ ] Ensure compatibility with multiple Java versions (JDK11-Current)
+- [ ] Enable compilation via command line and integration with external programs
 
 ## Getting Started
-To get started with this project, you will need to clone the repository and
-build the project. This project is written in CPP and can compile in a number
-of ways. You can download [Clang](https://clang.llvm.org) or [GCC](https://gcc.gnu.org/)
-to compile the project.
+To initiate involvement with this project, the repository needs to be cloned followed by building the project. Written in C++, the project supports compilation using various methods. You can utilize [Clang](https://clang.llvm.org) or [GCC](https://gcc.gnu.org/) for compiling.
+
+## Contributors
+![Logan Abernathy](https://github.com/m4ximumpizza.png) ![Shabman](https://github.com/shabman.png)
 
 ## License
-This project is licensed under the GNU General Public License v3.0 - see the
-[LICENSE](LICENSE.txt) file for details.
+This project is licensed under the GNU General Public License v3.0. Refer to the [LICENSE](LICENSE.txt) file for further details.
