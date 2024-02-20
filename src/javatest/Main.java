@@ -1,4 +1,12 @@
 package javatest;
+
+/**
+ * This program approximates the value of pi using the Leibniz formula.
+ *
+ * This is a test program for Praetorian.
+ *
+ * @author Logan Abernathy
+ */
 public class Main {
     public static void main(String[] args) {
         // Number of iterations to approximate pi
