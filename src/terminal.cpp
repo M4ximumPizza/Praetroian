@@ -1,3 +1,6 @@
+#include "terminal.h"
+
+// Include necessary headers
 #include <iostream>
 #include <string>
 #include <chrono>
@@ -16,7 +19,7 @@ void displayCurrentTime() {
     std::cout << "Current time is: " << std::ctime(&currentTime);
 }
 
-int main() {
+int terminal_main() {
     std::string input;
 
     // ASCII art welcome message
