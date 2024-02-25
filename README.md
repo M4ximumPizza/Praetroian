@@ -10,6 +10,8 @@ Similar to the 'javac' command which compiles Java code into bytecode, Praetoria
 - [X] Develop a lexer
 - [X] Implement a parser
 - [X] Construct an Abstract Syntax Tree (AST)
+- [ ] Make a custom terminal
+- [ ] Make it attached to default OS terminal
 - [ ] Establish an intermediate representation
 - [ ] Produce comprehensive documentation
 - [ ] Ensure compatibility with multiple Java versions (JDK11-Current)
