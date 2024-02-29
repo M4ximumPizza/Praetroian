@@ -27,3 +27,5 @@ To initiate involvement with this project, the repository needs to be cloned fol
 
 ## License
 This project is licensed under the GNU General Public License v3.0. Refer to the [LICENSE](LICENSE.txt) file for further details.
+
+  Copyright (c) 2024, Logan Abernathy. All rights reserved
