@@ -7,15 +7,17 @@ Praetorian is a project in development aiming to create a Java to machine code c
 Similar to the 'javac' command which compiles Java code into bytecode, Praetorian will generate machine code instead of bytecode.
 
 ## Goals:
-- [X] Develop a lexer
-- [X] Implement a parser
-- [X] Construct an Abstract Syntax Tree (AST)
+- [ ] Develop a lexer
+- [ ] Implement a parser
+- [ ] Construct an Abstract Syntax Tree (AST)
 - [ ] Make a custom terminal
 - [ ] Make it attached to default OS terminal
 - [ ] Establish an intermediate representation
 - [ ] Produce comprehensive documentation
 - [ ] Ensure compatibility with multiple Java versions (JDK11-Current)
 - [ ] Enable compilation via command line and integration with external programs
+
+If you want to look at the in depth goals. Look [here](GOALS.md)
 
 ## Getting Started
 To initiate involvement with this project, the repository needs to be cloned followed by building the project. Written in C++, the project supports compilation using various methods. You can utilize [Clang](https://clang.llvm.org) or [GCC](https://gcc.gnu.org/) for compiling.
