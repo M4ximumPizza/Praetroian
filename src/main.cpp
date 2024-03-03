@@ -6,7 +6,7 @@
 
 int main() {
     // Open the file
-    std::ifstream file("javatest/Main.java");
+    std::ifstream file("src/javatest/Main.java");
     if (!file.is_open()) {
         std::cerr << "Error opening file." << std::endl;
         return 1;
