@@ -6,6 +6,7 @@ Praetorian is a project in development aiming to create a Java to machine code c
 
 Similar to the 'javac' command which compiles Java code into bytecode, Praetorian will generate machine code instead of bytecode.
 
+The main goal is to make Java compile into a bin file instead of just a class file.
 ## Goals:
 - [ ] Develop a lexer
 - [ ] Implement a parser
